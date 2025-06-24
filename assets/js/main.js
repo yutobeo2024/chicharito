@@ -1,7 +1,7 @@
 // ======================= MÃ JAVASCRIPT TÍCH HỢP API =======================
 document.addEventListener('DOMContentLoaded', function() {
     // !!! QUAN TRỌNG: THAY THẾ URL NÀY BẰNG URL WEB APP CỦA BẠN
-    const API_URL = 'URL_WEB_APP_CUA_BAN_O_DAY';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbzHXirXIPG0Lzhc0CKdJNfg1tGCV68OxXL0HHAO8R7w3GwPKzgWcAVC5-JXZfAUMPX6lQ/exec';
 
     // =================================
     // CẤU HÌNH & KHỞI TẠO THƯ VIỆN

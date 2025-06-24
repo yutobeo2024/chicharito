@@ -40,16 +40,23 @@
 </div>
 
 <!-- SCRIPTS -->
+<!-- 1. Tải JQuery ĐẦU TIÊN -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+
+<!-- 2. Tải Bootstrap JS (cần JQuery) -->
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+<!-- 3. Tải các thư viện plugin (cần JQuery) -->
 <script src='/assets/js/simplecart.js'></script>
 <script src='/assets/js/owl.carousel.js'></script>
+
+<!-- 4. Tải file main.js của bạn CUỐI CÙNG -->
 <script src='/assets/js/main.js'></script>
 
 <script>
     // Script dành riêng cho trang chi tiết bài viết
     document.addEventListener('DOMContentLoaded', function() {
-        const API_URL = 'URL_WEB_APP_CUA_BAN_O_DAY'; // Nhớ thay URL của bạn vào đây
+        const API_URL = 'https://script.google.com/macros/s/AKfycbzHXirXIPG0Lzhc0CKdJNfg1tGCV68OxXL0HHAO8R7w3GwPKzgWcAVC5-JXZfAUMPX6lQ/exec'; // Nhớ thay URL của bạn vào đây
 
         async function loadPostDetail() {
             const params = new URLSearchParams(window.location.search);
