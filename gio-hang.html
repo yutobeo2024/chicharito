@@ -5,92 +5,29 @@
     <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport'/>
     <title>Giỏ hàng - Bếp Nhà</title>
     
-    <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
-    
-    <!-- Font Awesome -->
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
-    
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-    <!-- Main CSS File -->
     <link rel="stylesheet" href="/assets/css/style.css">
-    
-    <style>
-        /* CSS bổ sung cho trang giỏ hàng */
-        .cart-page-container {
-            padding: 40px 15px;
-            min-height: 50vh;
-        }
-        .cart-page-container h1 {
-            margin-bottom: 30px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: #942C61;
-        }
-        .cart-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .cart-table th, .cart-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-        .cart-table th {
-            background-color: #f9f9f9;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .cart-table .item-thumb img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        .cart-table .item-remove a {
-            color: #d9534f;
-            font-size: 18px;
-            text-decoration: none;
-        }
-        .cart-actions {
-            margin-top: 30px;
-            text-align: right;
-        }
-        .cart-actions .btn {
-            margin-left: 10px;
-            padding: 12px 25px;
-            font-size: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/custom-cart.css"> <!-- File CSS tùy chỉnh cho trang giỏ hàng -->
 </head>
 <body>
 <div id='page'>
-    <!-- ================= HEADER ================= -->
-    <header class='header-container'>
-        <!-- (Dán toàn bộ mã HTML của header từ file index.html vào đây) -->
-    </header>
+    <!-- HEADER -->
+    <header class='header-container'><!-- ... Mã header của bạn ... --></header>
 
-    <!-- ================= MAIN CONTENT ================= -->
+    <!-- MAIN CONTENT -->
     <main class="container cart-page-container">
         <h1>Giỏ hàng của bạn</h1>
         <div id="cart-content">
-            <!-- simpleCartJS sẽ tự động tạo bảng giỏ hàng ở đây -->
             <div class="simpleCart_items"></div>
-            
-            <div id="cart-summary" style="display: none;">
-                <hr>
+            <div id="cart-summary" style="display: none;"><hr>
                 <div class="cart-actions">
-                    <div style="font-size: 20px; margin-bottom: 20px;">
-                        <strong>Tổng cộng: <span class="simpleCart_grandTotal"></span></strong>
-                    </div>
+                    <div style="font-size: 20px; margin-bottom: 20px;"><strong>Tổng cộng: <span class="simpleCart_grandTotal"></span></strong></div>
                     <a href="javascript:;" class="simpleCart_empty btn btn-danger">Xóa hết giỏ hàng</a>
                     <a href="/thanh-toan.html" class="btn btn-success">Tiến hành thanh toán</a>
                 </div>
             </div>
-
             <div id="empty-cart-message" style="display: none; text-align: center; padding: 50px 0;">
                 <i class="fa fa-shopping-cart" style="font-size: 60px; color: #ccc;"></i>
                 <p style="font-size: 18px; margin-top: 20px;">Giỏ hàng của bạn đang trống.</p>
@@ -99,39 +36,15 @@
         </div>
     </main>
     
-    <!-- ================= FOOTER ================= -->
-    <footer class='footer'>
-        <!-- (Dán toàn bộ mã HTML của footer từ file index.html vào đây) -->
-    </footer>
+    <!-- FOOTER -->
+    <footer class='footer'><!-- ... Mã footer của bạn ... --></footer>
 </div>
 
-<!-- SCRIPTS -->
+<!-- SCRIPTS (ĐÃ SẮP XẾP LẠI THỨ TỰ) -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-<script src='assets/js/simplecart.js'></script>
-<script src='assets/js/owl.carousel.js'></script>
-<script src='assets/js/main.js'></script>
-
-<script>
-    // Script dành riêng cho trang giỏ hàng
-    simpleCart.ready(function() {
-        // Kiểm tra giỏ hàng khi trang tải xong
-        if (simpleCart.quantity() === 0) {
-            document.getElementById('empty-cart-message').style.display = 'block';
-        } else {
-            document.getElementById('cart-summary').style.display = 'block';
-        }
-
-        // Theo dõi sự kiện khi giỏ hàng được cập nhật
-        simpleCart.bind('update', function() {
-            if (simpleCart.quantity() === 0) {
-                document.querySelector('.simpleCart_items').style.display = 'none';
-                document.getElementById('cart-summary').style.display = 'none';
-                document.getElementById('empty-cart-message').style.display = 'block';
-            }
-        });
-    });
-</script>
-
+<script src='/assets/js/simplecart.js'></script>
+<script src='/assets/js/owl.carousel.js'></script>
+<script src='/assets/js/main.js'></script>
 </body>
 </html>

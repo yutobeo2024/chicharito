@@ -5,44 +5,21 @@
     <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport'/>
     <title>Thanh toán - Bếp Nhà</title>
     
-    <!-- ... (Copy các link CSS từ index.html vào đây) ... -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
-    
-    <style>
-        /* CSS bổ sung cho trang thanh toán */
-        .checkout-page-container {
-            padding: 40px 15px;
-            background-color: #fdfdfd;
-        }
-        .checkout-page-container h1 {
-            margin-bottom: 30px; text-align: center; font-weight: bold; color: #942C61;
-        }
-        .form-section {
-            background-color: #fff; padding: 30px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .order-summary-section {
-            background-color: #f9f9f9; padding: 30px; border-radius: 5px;
-        }
-        .order-summary-section .simpleCart_items table { width: 100%; }
-        .order-summary-section .simpleCart_items th, .order-summary-section .simpleCart_items td { padding: 8px 0; }
-        .order-summary-section .item-name { font-weight: bold; }
-        .order-summary-section .item-quantity { text-align: center; }
-        .order-summary-section .item-total { text-align: right; }
-        .grand-total-section { text-align: right; font-size: 22px; font-weight: bold; margin-top: 20px; }
-    </style>
+    <link rel="stylesheet" href="/assets/css/custom-checkout.css"> <!-- File CSS tùy chỉnh cho trang thanh toán -->
 </head>
 <body>
 <div id='page'>
-    <!-- ================= HEADER ================= -->
-    <header class='header-container'>
-        <!-- (Dán toàn bộ mã HTML của header từ file index.html vào đây) -->
-    </header>
+    <!-- HEADER -->
+    <header class='header-container'><!-- ... Mã header của bạn ... --></header>
 
-    <!-- ================= MAIN CONTENT ================= -->
+    <!-- MAIN CONTENT -->
     <main class="container checkout-page-container">
         <h1>Hoàn tất đơn hàng</h1>
         <div class="row">
-            <!-- Form thông tin khách hàng -->
             <div class="col-md-7">
                 <div class="form-section">
                     <h4>Thông tin nhận hàng</h4>
@@ -56,33 +33,25 @@
                     </form>
                 </div>
             </div>
-            
-            <!-- Tóm tắt đơn hàng -->
             <div class="col-md-5">
                 <div class="order-summary-section">
                     <h4>Đơn hàng của bạn</h4>
-                    <div class="simpleCart_items"></div>
-                    <hr>
-                    <div class="grand-total-section">
-                        Tổng cộng: <span class="simpleCart_grandTotal"></span>
-                    </div>
+                    <div class="simpleCart_items"></div><hr>
+                    <div class="grand-total-section">Tổng cộng: <span class="simpleCart_grandTotal"></span></div>
                 </div>
             </div>
         </div>
     </main>
     
-    <!-- ================= FOOTER ================= -->
-    <footer class='footer'>
-        <!-- (Dán toàn bộ mã HTML của footer từ file index.html vào đây) -->
-    </footer>
+    <!-- FOOTER -->
+    <footer class='footer'><!-- ... Mã footer của bạn ... --></footer>
 </div>
 
-<!-- SCRIPTS -->
+<!-- SCRIPTS (ĐÃ SẮP XẾP LẠI THỨ TỰ) -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-<script src='assets/js/simplecart.js'></script>
-<script src='assets/js/owl.carousel.js'></script>
-<script src='assets/js/main.js'></script>
-
+<script src='/assets/js/simplecart.js'></script>
+<script src='/assets/js/owl.carousel.js'></script>
+<script src='/assets/js/main.js'></script>
 </body>
 </html>

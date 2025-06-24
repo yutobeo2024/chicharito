@@ -3,107 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport'/>
-    <!-- Title sẽ được cập nhật bởi JS -->
     <title>Góc bếp - Bếp Nhà</title>
-    
-    <!-- ... (Copy các link CSS từ index.html vào đây) ... -->
-    <link rel="stylesheet" href="/assets/css/style.css">
 
-    <style>
-        /* CSS bổ sung cho trang chi tiết bài viết */
-        .post-detail-container { padding: 40px 15px; }
-        .post-title { font-size: 32px; font-weight: bold; margin-bottom: 15px; }
-        .post-meta-data { color: #888; margin-bottom: 25px; }
-        .post-featured-image img { width: 100%; height: auto; margin-bottom: 30px; border-radius: 5px; }
-        .post-content { line-height: 1.9; font-size: 16px; }
-    </style>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/custom-detail.css">
 </head>
 <body>
 <div id='page'>
-    <!-- ================= HEADER ================= -->
-    <header class='header-container'>
-        <!-- (Dán toàn bộ mã HTML của header từ file index.html vào đây) -->
-    </header>
+    <!-- HEADER -->
+    <header class='header-container'><!-- ... Mã header của bạn ... --></header>
 
-    <!-- ================= MAIN CONTENT ================= -->
+    <!-- MAIN CONTENT -->
     <main class="container post-detail-container">
-        <!-- Container này sẽ được điền dữ liệu bởi JavaScript -->
         <div id="post-detail-content" class="col-md-8 col-md-offset-2">
             <p style="text-align: center; font-size: 18px; padding: 50px 0;">Đang tải bài viết...</p>
         </div>
     </main>
     
-    <!-- ================= FOOTER ================= -->
-    <footer class='footer'>
-        <!-- (Dán toàn bộ mã HTML của footer từ file index.html vào đây) -->
-    </footer>
+    <!-- FOOTER -->
+    <footer class='footer'><!-- ... Mã footer của bạn ... --></header>
 </div>
 
-<!-- SCRIPTS -->
-<!-- 1. Tải JQuery ĐẦU TIÊN -->
+<!-- SCRIPTS (ĐÃ SẮP XẾP LẠI THỨ TỰ) -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-
-<!-- 2. Tải Bootstrap JS (cần JQuery) -->
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-
-<!-- 3. Tải các thư viện plugin (cần JQuery) -->
 <script src='/assets/js/simplecart.js'></script>
 <script src='/assets/js/owl.carousel.js'></script>
-
-<!-- 4. Tải file main.js của bạn CUỐI CÙNG -->
 <script src='/assets/js/main.js'></script>
-
-<script>
-    // Script dành riêng cho trang chi tiết bài viết
-    document.addEventListener('DOMContentLoaded', function() {
-        const API_URL = 'https://script.google.com/macros/s/AKfycbzHXirXIPG0Lzhc0CKdJNfg1tGCV68OxXL0HHAO8R7w3GwPKzgWcAVC5-JXZfAUMPX6lQ/exec'; // Nhớ thay URL của bạn vào đây
-
-        async function loadPostDetail() {
-            const params = new URLSearchParams(window.location.search);
-            const postId = params.get('id');
-            const contentDiv = document.getElementById('post-detail-content');
-
-            if (!postId) {
-                contentDiv.innerHTML = '<p>Không tìm thấy bài viết.</p>';
-                return;
-            }
-
-            try {
-                // Bạn cần tạo action 'getPostById' trong Google Apps Script
-                const response = await fetch(`${API_URL}?action=getPostById&id=${postId}`);
-                const result = await response.json();
-
-                if (result.status === 'success' && result.data) {
-                    const post = result.data;
-                    document.title = `${post.tieu_de} - Bếp Nhà`; // Cập nhật title trang
-                    
-                    contentDiv.innerHTML = `
-                        <article>
-                            <h1 class="post-title">${post.tieu_de}</h1>
-                            <div class="post-meta-data">
-                                <span><i class="fa fa-user"></i> ${post.tac_gia || 'Bếp Nhà'}</span>   
-                                <span><i class="fa fa-calendar"></i> ${new Date(post.ngay_dang).toLocaleDateString('vi-VN')}</span>
-                            </div>
-                            <div class="post-featured-image">
-                                <img src="${post.hinh_anh_url}" alt="${post.tieu_de}">
-                            </div>
-                            <div class="post-content">
-                                ${post.noi_dung}
-                            </div>
-                        </article>
-                    `;
-                } else {
-                    contentDiv.innerHTML = `<p>Lỗi: ${result.message || 'Không tìm thấy bài viết.'}</p>`;
-                }
-            } catch (error) {
-                console.error('Lỗi khi tải chi tiết bài viết:', error);
-                contentDiv.innerHTML = '<p>Không thể kết nối đến máy chủ. Vui lòng thử lại sau.</p>';
-            }
-        }
-
-        loadPostDetail();
-    });
-</script>
-
 </body>
 </html>
