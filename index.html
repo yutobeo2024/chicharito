@@ -8,59 +8,146 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <!-- Link đến file CSS chính -->
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 <div id='page'>
-    <!-- HEADER -->
-    <header class='header-container'><!-- ... Mã header của bạn ... --></header>
+    <!-- ================= HEADER ================= -->
+    <header class='header-container'>
+        <div class='top-header'><a>Hotline: 0868.450.305 / 0123.456.789</a></div>
+        <nav>
+            <div class='header container'>
+                <div class='row'>
+                    <div class='col-xs-12'>
+                        <div class='mm-toggle-wrap col-xs-2'><div class='mm-toggle'><i class='fa fa-bars'></i></div></div>
+                        <div class='col-md-2 col-lg-2 col-sm-8 col-xs-7 logo-header'><a class='logo' href='/'><img alt='Bếp Nhà Logo' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiObDTZTAYg-nGFlBAxo1d27pV6B5OgC7tbMdLetwwvFeukAcjLS08Z-7pjqxHjRCHdProW0v7Vagj3PzvZb6NduhrfiPX6myN6dc7XwMpmo_oLDyfj-9VgGqRpFYbhvhablCf9NqzsPjU/s1600/logo-01.png'/></a></div>
+                        <div class='nav-mobile hidden-lg hidden-md'>
+                            <a href='/gio-hang.html'><div class='top-cart-contain' id='open_shopping_cart_mobile'><div class='mini-cart'><div class='basket'><a href='/gio-hang.html'><i class='fa fa-shopping-cart'></i><span class='item_count'><span class='simpleCart_quantity'></span></span></a></div></div></div></a>
+                        </div>
+                        <div class='col-md-10 col-lg-10 col-sm-12'>
+                            <div class='nav-inner'>
+                                <ul class='' id='nav'>
+                                    <li class='level0 parent drop-menu active'><a href='/'><span>Trang chủ</span></a></li>
+                                    <li class='level0 parent drop-menu'><a href='/p/gioi-thieu.html'><span>Giới thiệu</span></a></li>
+                                    <li class='level0 parent drop-menu'><a href='/#'><span>Sản phẩm</span></a></li>
+                                    <li class='level0 parent drop-menu'><a href='/#'><span>Tin tức</span></a></li>
+                                    <li class='level0 parent drop-menu'><a href='/p/lien-he.html'><span>Liên hệ</span></a></li>
+                                </ul>
+                            </div>
+                            <div class='nav-inner hidden-sm hidden-xs'>
+                                <div class='top-cart-contain' id='open_shopping_cart'>
+                                    <div class='mini-cart'>
+                                        <div class='basket dropdown-toggle' data-toggle='dropdown'><a href='/gio-hang.html'><i class='fa fa-shopping-cart'></i> Giỏ hàng <span class='cart-total'>(<span class='simpleCart_quantity'></span>)</span></a></div>
+                                        <div class='mini-products-list dropdown-menu'>
+                                            <div class='top-cart-content'>
+                                                <ol class='cart-products-list simpleCart_items'></ol>
+                                                <div class='price-all'><strong>Tổng tiền:</strong> <span class='price simpleCart_finalTotal'></span></div>
+                                                <div class='actions'><a class='view-cart' href='/gio-hang.html'>Xem Giỏ hàng</a><a class='btn-checkout' href='/thanh-toan.html'>Thanh toán</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <!-- SLIDER -->
-    <section class='bg_slide'><!-- ... Mã slider của bạn ... --></section>
+    <!-- ================= SLIDER ================= -->
+    <section class='bg_slide'>
+        <div id='slide'>
+             <div class='carousel slide' data-ride='carousel' id='slide-item-carousel'>
+                <div class='carousel-inner'>
+                    <div class='item active'><a href='#'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjm_zF_k7UGkNTdmO-St_KnXweSyAPfv5lPX0jpyPS-ZGMGF6EhT8h4YYrV2wsUSrEhNBMR_Ihc1EUwINIj2Sk64hQFDLlrcYam8ut0YLWO-ndjSHbzvQyM0tlA6KHedz5XdKz0cWw7nDk/s1600/banner12365.jpg'/></a></div>
+                    <div class='item'><a href='#'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWgFzcDaSgToLYZXW5jfrHd9lXHLZbinaexEbUCnx4U8jJ0qPUO51C-vaMB_bAAzymlLCs6SdsmBydMc1PuOvBJDrmE6Yepsytx5RYZrUpw5dDbKpLas736J3-QhARNjqTV5iG78PLaX0/s1600/baner3445.jpg'/></a></div>
+                </div>
+                <a class='left slide-item-carousel-control' data-slide='prev' href='#slide-item-carousel'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6nGF3W2i8yFG9rlGWI_t25RZ0xfay57Id_e6HEupVqkN-FqK2ltg1494jEdsy29rz7mbHEnDHbZxzXtYOh2HerWZlK8fv55Xn-pXhOB54SD9tJPK5TNKtiUUNu__mQj_nRy_Qsnje_WSM/s1600/arrow-left.png'/></a>
+                <a class='right slide-item-carousel-control' data-slide='next' href='#slide-item-carousel'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZdaxJr1bRuZGapIf9oQEh430ulgpsYVMUY1bLb6BrPD1hrNsI_AdWI4Q_6ShacAu3T1-tpXy1rmvMseVVcyqYiu9VPez4DXDWmojEe8N8TEQZQW_EGYmsw7cZLzb3odg_kM8xx1FPyvKP/s1600/arrow-right.png'/></a>
+            </div>
+        </div>
+    </section>
 
-    <!-- GIỚI THIỆU -->
-    <section class='gallery_bg'><!-- ... Mã giới thiệu của bạn ... --></section>
+    <!-- ================= GIỚI THIỆU ================= -->
+    <section class='gallery_bg'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-md-6 col-sm-12 col-xs-12'>
+                    <div class='about-title'><h3><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDHvcC2b7SwzZXHfWYTKvTmXyET98ywYa_NKOCLLnRAGx8YGm2kgHOB-CI5zDMJQOu3j5zuO1rSin7O2OIOWScr6Bw0dyJgkTXEN4NhPlLJJC67XtxglQSM84a_0_-tf92MbOebSq6noTE/s1600/typo.png'/></h3></div>
+                    <div class='about-content'>"Đi cà phê" từ lâu không đơn thuần chỉ là uống một tách cà phê mà còn là dịp gặp mặt và trò chuyện cùng bạn bè. Tại Bếp Nhà, chúng tôi trân trọng và đề cao giá trị kết nối giữa con người và trải nghiệm của khách hàng.</div>
+                    <div class='viewmore'><a href='/p/gioi-thieu.html'>Xem chi tiết</a></div>
+                </div>
+                <div class='col-md-6 col-sm-6 hidden-sm hidden-xs col-xs-12'><img alt='' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKUhvbvcsuK-oIyect7IIp6uZjCtod_piqmwsmxFZSLKV0z9V0YtoUFjKlN8MX6OP9XdPoh7hQEXInNeZAoQmQmXek48LHoSgXh7IOfh1O-yjpYkxJAWS8LSpornW-KGQHXOFUCbUDgDQ/s1600/bg-slide.png'/></div>
+            </div>
+        </div>
+    </section>
     
-    <!-- SẢN PHẨM NỔI BẬT -->
+    <!-- ================= SẢN PHẨM NỔI BẬT ================= -->
     <section class='best-seller-pro'>
         <div class='container'>
             <div class='slider-items-products'>
                 <div class='new_title center'><h2>Đồ ăn ngon</h2></div>
-                <div id='featured-products-container' class='product-flexslider hidden-buttons'></div>
+                <div id='featured-products-container' class='product-flexslider hidden-buttons'>
+                    <!-- Dữ liệu sẽ được JS chèn vào đây -->
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SẢN PHẨM MỚI -->
+    <!-- ================= SẢN PHẨM MỚI ================= -->
     <section class='best-seller-pro'>
         <div class='container'>
             <div class='slider-items-products'>
                 <div class='new_title center'><h2>Sản phẩm mới</h2></div>
-                <div id='new-products-container' class='product-flexslider hidden-buttons'></div>
+                <div id='new-products-container' class='product-flexslider hidden-buttons'>
+                    <!-- Dữ liệu sẽ được JS chèn vào đây -->
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- GÓC BẾP (TIN TỨC) -->
+    <!-- ================= GÓC BẾP (TIN TỨC) ================= -->
     <div class='site-content tintuc-webbog'>
         <div class='container'>
             <div class='new_title center'><h2>Góc bếp</h2></div>
-            <div class='row' id="blog-posts-container"></div>
+            <div class='row' id="blog-posts-container">
+                <!-- Dữ liệu sẽ được JS chèn vào đây -->
+            </div>
         </div>
     </div>
     
-    <!-- FOOTER -->
-    <footer class='footer'><!-- ... Mã footer của bạn ... --></footer>
+    <!-- ================= FOOTER ================= -->
+    <footer class='footer'>
+        <div class='footer-middle'>
+            <div class='container'><div class='row'><div class='col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1 contact-footer'><div class='contact_title col-md-5 col-sm-6'><a href='/'><img alt='Bếp nhà Du' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjb0zXHuW9lY57jRkhpT4-mLD7ld5yyJg_130J72B64bSc9mHeJ58rHLKOw5YAdFeZHz5pueI4bxZWulAHNZQQpoClPxfoMLDDJ7LzJupQMhUo0AVPHmQQdVH2ZFB72bVkaWADvDax64SI/s1600/logo_footer.png'/></a></div><ul class='links-contact col-md-7 col-sm-6'><li>BẾP NHÀ DU</li><li>Address: Số 97 Man Thiện, phường Hiệp Phú, quận 9, TP HCM</li><li>Phone: 0868.450.305</li><li>Open: 8:00 AM - 21.00 PM</li><li><a href='#' target='_blank'><i class='fa fa-facebook-official'></i></a><a href='#' target='_blank'><i class='fa fa-youtube-square'></i></a></li></ul></div></div></div>
+        </div>
+        <div class='footer-bottom footer-body-hoangthien'>
+            <div class='container'><div class='row'><div class='col-sm-12 col-xs-12 coppyright'><p>© Bản quyền thuộc về Bếp Nhà | Thiết kế bởi Khôi Ròm</p></div></div></div>
+        </div>
+    </footer>
 </div>
 
-<!-- POPUP -->
-<div class='modal fade' id='popup-cart' role='dialog' style="display:none;"><!-- ... Mã popup của bạn ... --></div>
+<!-- POPUP THÊM VÀO GIỎ HÀNG -->
+<div class='modal fade' id='popup-cart' role='dialog' style="display:none;">
+    <div class='modal-dialog modal-sm'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <button type='button' class='close' data-dismiss='modal'>×</button>
+                <h4 class='modal-title'><i class='fa fa-check-circle'></i> Thêm vào giỏ hàng thành công!</h4>
+            </div>
+            <div class='modal-body'><p>Sản phẩm đã được thêm vào giỏ hàng của bạn.</p></div>
+            <div class='modal-footer'>
+                <button type='button' class='btn btn-default' data-dismiss='modal'>Tiếp tục mua sắm</button>
+                <a href="/gio-hang.html" class='btn btn-primary'>Xem giỏ hàng</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- SCRIPTS (ĐÃ SẮP XẾP LẠI THỨ TỰ) -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-<script src='/assets/js/simplecart.js'></script>
-<script src='/assets/js/owl.carousel.js'></script>
+<!-- SCRIPTS (GỌI DUY NHẤT 1 FILE) -->
 <script src='/assets/js/main.js'></script>
 
 </body>

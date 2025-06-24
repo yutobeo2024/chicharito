@@ -8,13 +8,24 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/custom-cart.css"> <!-- File CSS tùy chỉnh cho trang giỏ hàng -->
+    <style>
+        .cart-page-container { padding: 40px 15px; min-height: 50vh; }
+        .cart-page-container h1 { margin-bottom: 30px; text-align: center; font-size: 28px; font-weight: bold; color: #942C61; }
+        .simpleCart_items table { width: 100%; border-collapse: collapse; }
+        .simpleCart_items th, .simpleCart_items td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; vertical-align: middle; }
+        .simpleCart_items th { background-color: #f9f9f9; font-weight: bold; text-transform: uppercase; }
+        .item-thumb img { width: 80px; height: 80px; object-fit: cover; border-radius: 4px; }
+        .item-remove a { color: #d9534f; font-size: 18px; text-decoration: none; }
+        .cart-actions { margin-top: 30px; text-align: right; }
+        .cart-actions .btn { margin-left: 10px; padding: 12px 25px; font-size: 16px; }
+    </style>
 </head>
 <body>
 <div id='page'>
     <!-- HEADER -->
-    <header class='header-container'><!-- ... Mã header của bạn ... --></header>
+    <header class='header-container'><!-- Dán mã header vào đây --></header>
 
     <!-- MAIN CONTENT -->
     <main class="container cart-page-container">
@@ -37,14 +48,11 @@
     </main>
     
     <!-- FOOTER -->
-    <footer class='footer'><!-- ... Mã footer của bạn ... --></footer>
+    <footer class='footer'><!-- Dán mã footer vào đây --></footer>
 </div>
 
-<!-- SCRIPTS (ĐÃ SẮP XẾP LẠI THỨ TỰ) -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-<script src='/assets/js/simplecart.js'></script>
-<script src='/assets/js/owl.carousel.js'></script>
+<!-- SCRIPTS (GỌI DUY NHẤT 1 FILE) -->
 <script src='/assets/js/main.js'></script>
+
 </body>
 </html>
