@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport'/>
+    <!-- Title sẽ được cập nhật bởi JS -->
+    <title>Chi tiết sản phẩm - Bếp Nhà</title>
+    
+    <!-- ... (Copy các link CSS từ index.html vào đây) ... -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* CSS bổ sung cho trang chi tiết sản phẩm */
+        .product-detail-container { padding: 40px 15px; }
+        .product-image-gallery img { width: 100%; border-radius: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .product-info h1 { font-size: 28px; font-weight: bold; margin-top: 0; }
+        .product-info .price-box { margin: 20px 0; }
+        .product-info .special-price .price { font-size: 32px; color: #d9534f; font-weight: bold; }
+        .product-info .old-price .price { font-size: 20px; color: #777; text-decoration: line-through; }
+        .product-description { margin-top: 20px; line-height: 1.8; }
+        #add-to-cart-detail-btn { font-size: 18px; padding: 12px 30px; }
+    </style>
+</head>
+<body>
+<div id='page'>
+    <!-- ================= HEADER ================= -->
+    <header class='header-container'>
+        <!-- (Dán toàn bộ mã HTML của header từ file index.html vào đây) -->
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="container product-detail-container">
+        <!-- Container này sẽ được điền dữ liệu bởi JavaScript -->
+        <div id="product-detail-content">
+            <p style="text-align: center; font-size: 18px; padding: 50px 0;">Đang tải thông tin sản phẩm...</p>
+        </div>
+    </main>
+    
+    <!-- ================= FOOTER ================= -->
+    <footer class='footer'>
+        <!-- (Dán toàn bộ mã HTML của footer từ file index.html vào đây) -->
+    </footer>
+</div>
+
+<!-- SCRIPTS -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='assets/js/simplecart.js'></script>
+<script src='assets/js/owl.carousel.js'></script>
+<script src='assets/js/main.js'></script>
+
+<script>
+    // Script dành riêng cho trang chi tiết sản phẩm
+    document.addEventListener('DOMContentLoaded', function() {
+        const API_URL = 'URL_WEB_APP_CUA_BAN_O_DAY'; // Nhớ thay URL của bạn vào đây
+
+        async function loadProductDetail() {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('id');
+            const contentDiv = document.getElementById('product-detail-content');
+
+            if (!productId) {
+                contentDiv.innerHTML = '<p>Không tìm thấy sản phẩm. Vui lòng quay lại trang chủ.</p>';
+                return;
+            }
+
+            try {
+                // Bạn cần tạo action 'getProductById' trong Google Apps Script
+                const response = await fetch(`${API_URL}?action=getProductById&id=${productId}`);
+                const result = await response.json();
+
+                if (result.status === 'success' && result.data) {
+                    const product = result.data;
+                    document.title = `${product.ten_sanpham} - Bếp Nhà`; // Cập nhật title trang
+                    
+                    contentDiv.innerHTML = `
+                        <div class="row">
+                            <div class="col-md-6 product-image-gallery">
+                                <img src="${product.hinh_anh_chinh_url}" alt="${product.ten_sanpham}">
+                            </div>
+                            <div class="col-md-6 product-info">
+                                <h1>${product.ten_sanpham}</h1>
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span class="price">${parseInt(product.gia_ban).toLocaleString('vi-VN')} đ</span>
+                                    </p>
+                                    ${product.gia_cu ? `<p class="old-price"><span class="price">${parseInt(product.gia_cu).toLocaleString('vi-VN')} đ</span></p>` : ''}
+                                </div>
+                                <div class="product-description">
+                                    <p>${product.mo_ta_ngan || 'Chưa có mô tả cho sản phẩm này.'}</p>
+                                </div>
+                                <hr>
+                                <button id="add-to-cart-detail-btn" class="btn btn-primary" onclick="addToCart(event, '${product.ten_sanpham}', ${product.gia_ban}, '${product.hinh_anh_chinh_url}')">
+                                    <i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 40px;">
+                            <div class="col-xs-12">
+                                <h3>Mô tả chi tiết sản phẩm</h3>
+                                <div class="product-full-description">
+                                    ${product.mo_ta_day_du || ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    contentDiv.innerHTML = `<p>Lỗi: ${result.message || 'Không tìm thấy sản phẩm.'}</p>`;
+                }
+            } catch (error) {
+                console.error('Lỗi khi tải chi tiết sản phẩm:', error);
+                contentDiv.innerHTML = '<p>Không thể kết nối đến máy chủ. Vui lòng thử lại sau.</p>';
+            }
+        }
+
+        loadProductDetail();
+    });
+</script>
+
+</body>
+</html>
